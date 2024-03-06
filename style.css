@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: 0.5s;
+}
+.container {
+    background-color: rgba(220, 250, 250, 1);
+    width: 200px;
+    height: max-content;
+    padding: 20px;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+    transition: 0.2s;
+    font-family: 'Montserrat';
+}
+.container input {
+    outline: none;
+    border-radius: 5px;
+    border-width: 1px;
+    padding: 5px;
+    font-family: 'Montserrat';
+    color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.15);
+    transition: 0.2s;
+}
+.container input:focus {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.container h2 {
+    font-weight: 300;
+    text-decoration: underline;
+}
+.container summary {
+    list-style: none;
+    background-color: transparent;
+    margin-top: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.container summary:hover {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    background-color: rgba(250, 250, 250, 0.4);
+}
+.container details {
+    transition: 0.4s;
+    margin-top: 15px;
+}
+.container details:hover {
+    background-color: rgba(250, 250, 250, 0.6);
+    border-radius: 0px 0px 3px 3px;
+}
+.mode {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display:table-cell;
+}
+.mode button {
+    border-radius: 0px;
+    background-color: rgba(250, 250, 250, 0.3);
+    border-color: transparent;
+    border-width: 0px 0px 2px 0px;
+    transition: 0.3s;
+    padding: 10px;
+    cursor: pointer;
+    width: 150px;
+}
+.mode button:hover {
+    
+    border-color: rgba(0, 0, 0, 0.8);
+}

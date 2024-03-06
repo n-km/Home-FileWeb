@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Home FileWeb</title>
+        <meta name="description" content="Das ist unser Home FileWeb-Server">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body id="BG">
+        <div class="mode">
+            <button onclick="BG.style.background = 'rgba(0, 0, 0, 0.80' ">Dunkel-Modus</button>
+            <br>
+            <button onclick="BG.style.background = 'black' ">Schwarz-Modus</button>
+            <br>
+            <button onclick="BG.style.background = 'rgba(0, 0, 0, 0.1)' ">Hell-Modus</button>
+                </div>
+        <center>
+
+            <div class="container">
+                <h2>Home FileWeb</h2>
+            <div class="searchinterface">
+                <label>
+                <label for="browsers">   </label>
+                
+               <input placeholder="Password, then Enter..." list="browsers" id="font-size" name="browsers">
+            </div>
+
+            <details>
+                <summary>Wie geht es?</summary>
+                <p>Es gibt untergeordnete Ordner der index.html gegenüber. Diese suchen Sie sozusagen mithilfe des Input-Feldes. Der von mir vorgegebene Ordner lautet 'password'. Also müssen Sie 'password' eingeben. Sie können sich auch selber Ordner anlegen.</p>
+            </details>
+
+            </div>
+                
+        </center>
+        
+        <script>
+                document.getElementById('font-size').addEventListener('change',function(){
+                    console.warn("Wait.for.accept:Code=", this.value);
+                    
+                    console.info("Accepted", this.value)
+                  close.alert=this.button;
+                  location.href=this.value;
+                })
+        </script>
+    </body>
+</html>

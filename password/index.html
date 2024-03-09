@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <div class="container" id="start-site">
@@ -29,18 +30,61 @@
         <button onclick="UPLOAD.style.display='none'" class="close">Close</button>
         <h3>Upload</h3>
         <form action="upload.php" method="post" enctype="multipart/form-data">
-            <input type="file" name="file" id="insert-file-btn">
+            <input type="file" name="file" id="insert-file-btn" draggable="true">
+            
             <input type="submit" value="Datei hochladen" id="upload-file-btn">
         </form>
 
     </div>
 
+    <div class="container" id="SETUP" style="display: none;">
+        <button onclick="SETUP.style.display='none'" class="close">Close</button>
+        <h3>Setup</h3>
+        <p>1 - Download the .zip-file from Github <a href="https://github.com/n-km/Home-FileWeb/archive/refs/heads/main.zip" target="_blank">Here</a></p>
+        <p>2 - Download XAMPP</p>
+        <p>3 - unzip the file and save it in C:/xampp/htdocs/</p>
+        <p>4 - rename the ordner to cloud</p>
+        <p>5 - start xampp and start the apache service</p>
+        <p>6 - go on your browser and type <a href="https://localhost/cloud">https://localhost/cloud</a></p>
+        <p>7 - Your Home-Cloud is ready!</p>
+
+        <h3>You want start it from your mobile?</h3>
+        <p>1 - You have to follow the top steps</p>
+        <p>2 - Search on your computer 'cmd'</p>
+        <p>3 - write the command 'hostname'</p>
+        <p>4 - Now put your smartphone and go to your browser</p>
+        <p>5 - Type in: https://(your hostname)/cloud</p>
+        <p>6 - Have Fun!</p>
+    </div>
+
+    <div class="container" id="UPDATES">
+        <button onclick="UPDATES.style.display='none'" class="close">Close</button>
+        <h3>Updates</h3>
+        <p>Currently Version: 1.0 Open Source</p>
+        <p>You want to check new releases?</p>
+        <p>Look at GitHub: <a href="https://github.com/n-km/Home-FileWeb">Here</a></p>
+    </div>
+
     <div class="task">
+        <form action=""><button>Cloud</button></form>
+        <button>Menu</button>
+        <button onclick="UPLOAD.style.display= 'block'">Upload</button>
+        <button>Settings</button>
+        <button onclick="SETUP.style.display= 'block'">How to setup?</button>
+        <button onclick="UPDATES.style.display = 'block'">Updates</button>
+    </div>
+
+    <div class="menu-button" onclick="SIDEBAR.style.transform = 'translate(0, 0)'">
+        <span class="material-symbols-outlined" style="font-size: 25px;">menu</span>
+    </div>
+    <div class="sidebar" id="SIDEBAR">
+        <button><span class="material-symbols-outlined" onclick="SIDEBAR.style.transform = 'translate(100%, 0)'">close</span></button>
         <form action=""><button>Cloud</button></form>
         <button>Menu</button>
         <button onclick="UPLOAD.style.display='block'">Upload</button>
         <button>Settings</button>
-        <button>How to setup?</button>
+        <button onclick="SETUP.style.display='block'">How to setup?</button>
+        <button>Updates</button>
     </div>
 
     <script>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
+</head>
+    <body>
+
+        <div class="container" id="start-site">
+            <h3>Good Morning!</h3>
+            <p>This is your static-website-cloud.</p>
+        </div>
+        <div class="container">
+            <h3>Dashboard</h3>
+            <ul id="fileList"></ul>
+
+            <div id="fileViewer"></div>
+        </div>
+
+
+
+
+        <div class="task">
+            <form action=""><button>Cloud</button></form>
+            <button>Menu</button>
+            <button>Upload</button>
+            <button>Settings</button>
+            <button>How to setup?</button>
+        </div>
+        <script>
+            // Pfad zu deinem Ordner
+            const folderPath = '/';
+    
+            // Funktion zum Laden der Dateien
+            function loadFiles() {
+                fetch(folderPath)
+                    .then(response => response.text())
+                    .then(text => {
+                        // Extrahiere Dateinamen aus dem HTML-Inhalt
+                        const filenames = text.match(/href="([^"]+)"/g).map(match => match.slice(6, -1));
+                        const fileList = document.getElementById('fileList');
+    
+                        // Füge jeden Dateinamen als Link zur Liste hinzu
+                        filenames.forEach(filename => {
+                            const listItem = document.createElement('li');
+                            const link = document.createElement('a');
+                            link.href = folderPath + '/' + filename;
+                            link.textContent = filename;
+                            link.addEventListener('click', function(event) {
+                                event.preventDefault();
+                                openFile(folderPath + '/' + filename);
+                            });
+                            listItem.appendChild(link);
+                            fileList.appendChild(listItem);
+                        });
+                    });
+            }
+    
+            // Funktion zum Öffnen von Dateien
+            function openFile(filePath) {
+                const fileViewer = document.getElementById('fileViewer');
+                fileViewer.innerHTML = ''; // Lösche vorherige Inhalte
+    
+                // Überprüfe Dateityp und handle entsprechend
+                if (filePath.match(/\.(jpeg|jpg|png|gif)$/i)) {
+                    // Bilddatei: Zeige sie im Browser an
+                    const image = document.createElement('img');
+                    image.src = filePath;
+                    fileViewer.appendChild(image);
+                } else {
+                    // Andere Dateitypen: Lade die Datei herunter
+                    const downloadLink = document.createElement('a');
+                    downloadLink.href = filePath;
+                    downloadLink.textContent = 'Datei herunterladen';
+                    fileViewer.appendChild(downloadLink);
+                }
+            }
+    
+            // Lade die Dateien, wenn die Seite geladen ist
+            window.onload = loadFiles;
+        </script>
+    </body>
+</html>

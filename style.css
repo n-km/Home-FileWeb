@@ -1,7 +1,11 @@
+html {
+    cursor: cell;
+}
 body {
     margin: 0;
     background-color: rgba(0, 0, 0, 0.1);
     transition: 0.5s;
+    cursor: url();
 }
 .container {
     background-color: rgba(220, 250, 250, 1);
@@ -41,7 +45,7 @@ body {
 }
 .container summary:hover {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-    background-color: rgba(250, 250, 250, 0.4);
+    background-color: rgba(250, 250, 250, 0.6);
 }
 .container details {
     transition: 0.4s;
